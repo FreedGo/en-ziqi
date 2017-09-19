@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>[!--pagetitle--]</title>
+	<meta name="description" content="[!--pagedes--]" />
+	<meta name="keywords" content="[!--pagekey--]" />
+	<meta name="baidu-site-verification" content="9vwwsoBoTL" />
+	<link type="text/css" rel="stylesheet" href="/d/css/20101117.css" />
+	<link type="text/css" rel="stylesheet" href="/d/css/flexslider.css" />
+	<style>
+		.index_right_video{
+			position: relative;
+			background: url("/d/images/ziqi-video.jpg");
+			margin-bottom: 15px;
+		}
+		.index_right_video img{
+			position: absolute;
+			left:96px;
+			top:43px;
+		}
+		.video-content{
+			background-color: #000;
+		}
+		.layui-layer-content{
+			background-color: #000;
+		}
+		.index_right_1_right ul{
+			height: 308px;
+			overflow: hidden;
+		}
+		
+	</style>
+	<script type="text/javascript" src="/d/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/d/js/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/d/layer/layer.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".flexslider").flexslider({});
+			//点击视频弹出播放
+			$('.index_right_video').click(function () {
+				var index = layer.open({
+					type: 1,
+					content: '<video autoplay controls style="width:100%;max-height: 100%" src="http://ziqi.oss-cn-shanghai.aliyuncs.com/2017.6.28%E7%B4%AB%E6%B0%94%E5%8E%8B%E7%BC%A9%E6%9C%BA%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89.mp4" poster="/d/images/video-play-big.jpg"></video>',
+					area: ['720px', '405px'],
+					skin:'video-content',
+					maxmin: true
+				});
+				layer.full(index);
+			})
+		});
+
+	</script>
+
+</head>
+<body>
+<!-- header -->
+[!--temp.header--]
+<!-- /header -->
+<!-- 轮播 -->
+<div class="flexslider">
+	<ul class="slides">
+		[e:loop={"select * from {$dbtbpre}enewsad where classid='2' order by adid desc limit 10",10,24,0}]
+		<li><a href=""><img src="<?=$bqr[picurl]?>" alt="<?=$bqr[title]?>" /></a></li>
+		[/e:loop]
+	</ul>
+</div>
+<!-- /轮播 -->
+<div style="width:940px; height:20px; line-height:20px; padding-left: 10px; margin-top:20px; font-size:14px; color: #333;"><strong>选购空压机：</strong></div>
+<ul class="IndexPost-Title-Bg">
+	<!--推荐产品X5-->
+	[e:loop={3,5,0,0,'isgood=1','paixu asc'}]
+	<div id="zishu_test">
+		<li> <a href="<?=$bqsr['titleurl']?>" target="_blank"><span><h2><?=$bqr['title']?></h2>压　力：<?=$bqr['yali']?> MPa<br/>气　量：<?=$bqr['qiliang']?> m3/min<br/>功　率：<?=$bqr['gonglv']?> Kw</span><img src='<?=$bqr['titlepic']?>' border='1' height='80' alt='<?=$bqr['title']?>'></a></li>
+	</div>
+	[/e:loop]
+</ul>
+<!-- left -->
+<div class="index_left"  >
+	<div class="index_left_nav"  >
+		<h3><span><a href="">紫气压缩机产品列表</a></span></h3>
+	</div>
+	<div class="index_prod_class"  >
+		<ul>
+			[e:loop={"select * from {$dbtbpre}enewsinfotype where mid='3' order by myorder asc",10,24,0}]
+			<li><a href='<?=$bqr[tpath]?>'><?=$bqr[tname]?></a></li>
+			[/e:loop]
+		</ul>
+	</div>
+	<div class="index_left_nav"  >
+		<h3><span><a href="" >紫气公司新闻</a></span></h3>
+	</div>
+	<div class="index_prod_class_2">
+		<ul>[ecmsinfo]8,5,20,0,0,18,0,'isgood=1'[/ecmsinfo]</ul>
+	</div>
+	<div class="index_left_nav"  >
+		<h3><span><a href="">紫气快速通道</a></span></h3>
+	</div>
+	<div class="index_prod_class">
+		<ul>
+			<li><a href="[!--news.url--]public/about.html">公司介绍</a></li>
+			<li><a href="[!--news.url--]public/skill/">技术支持</a></li>
+			<li><a href="[!--news.url--]public/news">新闻动态</a></li>
+			<li><a href="[!--news.url--]public/work.html">工作机会</a></li>
+			<li><a href="[!--news.url--]public/pro/">产品中心</a></li>
+			<li><a href="#QQ">售后服务</a></li>
+			<li><a href="#QQ">客户中心</a></li>
+		</ul>
+	</div>
+	<div class="index_left_nav"  >
+		<h3><span><a href="public/baike/" title="紫气机械百科" target="_blank">紫气机械百科</a></span></h3>
+	</div>
+	<div class="index_prod_class_3">
+		<ul>
+			[ecmsinfo]12,15,20,0,0,18,0[/ecmsinfo]
+		</ul>
+	</div>
+</div>
+<!-- /left -->
+<!-- right -->
+<div class="index_right">
+	<div class="index_right_1_left">
+		<div class="index_right_1_left_nav">
+			<h2><span class="nav_link"><a href="/public/about.html" title="关于紫气压缩机">关于紫气压缩机</a></span></h2>
+		</div>
+		<div class="index_right_1_left_content_text"><strong>紫气压缩机(上海)有限公司</strong>主机由德国GHH提供，德国GHH公司拥有雄厚的科研技术、最先进的计算机管理系统，是在全球拥有专利线型最多的主机生产厂商，欧洲标准生产线，使本公司生产的“紫气”双螺杆式空气压缩机在技术、节能、又上了一个新的水平，生产与欧洲同步的第三代、低噪音节能型螺杆压缩机。<br />
+			公司生产的产品系列包括风冷螺杆空气压缩机、水冷螺杆式空气压缩机、变频螺杆式空压机和移动螺杆式空压机，冷冻式干燥机，精密过滤器，吸附式干燥机等。在生产现场，紫气将为用户提供优质的压缩机空气系统，以使用户达到最佳的生产能力。用户可在我们产品的范围中选择一套完整的压缩空气系统以满足各种需求。
+		</div>
+	</div>
+	<div class="index_right_1_right">
+		<div class="index_right_video" style="height:130px;">
+			<img src="/d/images/video-play.png" alt="">
+		</div>
+		<div class="index_right_1_right_nav">
+			<h3><span><a href="" target="_blank">空压机常见问题 & 使用指南</a></span></h3>
+		</div>
+		<ul>[ecmsinfo]6,18,32,0,0,19,0,'','newstime DESC'[/ecmsinfo]</ul>
+	</div>
+	<div class="index_right_1_left">
+		<div class="index_right_1_left_nav">
+			<h2><span class="nav_link"><a href="/public/contact.html">联系方式</a></span></h2>
+		</div>
+		<div class="index_right_1_left_content">
+			<img src="/d/images/index_lxwm_t.jpg" alt="联系方式"/>
+		</div>
+	</div>
+	<div class="index_right_3" style="overflow:hidden;">
+		<div class="index_right_3_nav">
+			<h2><span class="nav_link"><a href="">推荐产品</a></span></h2>
+		</div>
+		<ul>
+			[e:loop={3,12,0,0,'firsttitle=1','paixu asc'}]
+			<li style="margin:0px;">
+				<div class="index_right_3_img"><a href="<?=$bqsr['titleurl']?>">
+					<img src='<?=$bqr['titlepic']?>' border='0' width='170' height='120' alt='<?=$bqr['title']?>'></a></div>
+				<div class="index_right_3_text"><a href="<?=$bqsr['titleurl']?>"><?=$bqr['title']?></a><br/>
+					<SMALL>功　率<?=$bqr['gonglv']?> Kw</SMALL> <br/>
+					<SMALL>排气量<?=$bqr['qiliang']?> m3/min</SMALL></div>
+			</li>
+			[/e:loop]
+		</ul>
+	</div>
+	<div class="index_right_4">
+		<div class="index_right_4_left">
+			<div class="index_right_1_left_nav">
+				<h2><span class="nav_link"><a href="" title="紫气新闻动态" target="_blank">紫气新闻动态</a></span></h2>
+			</div>
+			<ul>[ecmsinfo]8,15,32,0,0,20,0,'','newstime DESC'[/ecmsinfo]</ul>
+		</div>
+		<div class="index_right_4_right">
+			<div class="index_right_1_left_nav2">
+				<h2><span class="nav_link"><a href="" title="行业新闻" target="_blank">行业资讯</a></span></h2>
+			</div>
+			<ul>[ecmsinfo]5,15,35,0,0,18,0,'','newstime DESC'[/ecmsinfo]</ul>
+		</div>
+	</div>
+</div>
+[!--temp.footer--]
+<div class="flink">
+	<ul>友链链接：
+		<li><a href='' target='_blank'>空压机</a> </li>
+	</ul>
+</div>
+</body>
+</html>

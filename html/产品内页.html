@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>[!--title--]</title>
+	<meta name="keywords" content="空压机,移动式,柴动," />
+	<meta name="description" content="机器型号 额定功率" />
+	<link href="/d/css/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+	<link rel="stylesheet" href="/d/css/dedecms_skins_1.css" type="text/css" id="cssfile" />
+	<link type="text/css" href="/d/css/20101117.css" rel="stylesheet"/>
+</head>
+<body class="articlelist">
+[!--temp.header--]
+<div class="in_pic"><img src="/d/images/pro1.jpg" alt="紫气压缩机"></div>
+<div class="w960 center clear mt1">
+	<script type="text/javascript" src="/d/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/d/js/default.js"></script>
+	<script type="text/javascript" src="/d/layer/layer.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			DownLoad();
+			// 产品介绍切换
+			var proDtList = $('.proDt-xp ul li'),
+			    proDeList = $('.proDt-Details');
+			proDtList.on('click',function(){
+				$(this).addClass('current').siblings().removeClass('current');
+				proDeList.eq($(this).index()).show().siblings('.proDt-Details').hide();
+			});
+			//标题图片点击显示大图
+			layer.photos({
+				photos: '#Div2'
+				,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+			});
+		})
+	</script>
+	<div class="rightWarp">
+		<div class="mbx_top">
+			<div class="divF"><strong>当前位置:</strong>[!--newsnav--]</div>
+		</div>
+		<div class="rightContent">
+			<!--内容部分 start-->
+			<div class="left-proDetail">
+				<div class="topPro">
+					<div class="bgList" id="Div2"><img id="titlepic" layer-src="[!--titlepic--]" src="[!--titlepic--]" width="340" height="255" alt="[!--title--]" />
+					</div>
+				</div>
+			</div>
+			<div class="proDtl-right">
+				<div class="proDtl-cont">
+					<p><span style="color: #0054a6; font-size: 18px"><strong>[!--title--]</strong></span></p>
+					<p>&#160;</p>
+					<p>功　　率：<span>[!--gonglv--] 【KW】</span></p>
+					<p>气　　量：<span>[!--qiliang--] 【m3/min】</span></p>
+					<p>排气压力：<span>[!--yali--] 【MPa】</span></p>
+					<p>传动方式：<span>[!--chuandong--]</span> </p>
+					<p>冷却方式：<span>[!--lengquefangshi--]</span> </p>
+					<p>浏览次数：<span><script src=[!--news.url--]e/public/ViewClick/?classid=[!--classid--]&id=[!--id--]&addclick=1></script> 次</span> </p>
+					<p>更新日期：<span>[!--newstime--]</span> </p>
+				</div>
+				<div class="px-a clearfix">
+					<div class="clearfix">
+						<img src="/d/images/400.jpg" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="clear">
+			</div>
+			<div class="proDt-xp">
+				<ul>
+					<li class="current">功能特征</li>
+					<li>产品参数</li>
+					<li>产品应用</li>
+					<li>服务支持</li>
+				</ul>
+			</div>
+			<div class="proDt-Details" style="display: block;">[!--newstext--]</div>
+			<div class="proDt-Details">[!--canshu--]</div>
+			<div class="proDt-Details">[!--fanwei--]</div>
+			<div class="proDt-Details">[!--fuwu--]</div>
+			<!--内容部分 end-->
+		</div>
+	</div><!-- /pleft -->
+
+	<div class="pright" style="float:left;">
+		<div>
+			<dl class="tbox">
+				<dt><strong>产品分类</strong></dt>
+				<dd>
+					<ul class="d6">
+						[e:loop={"select * from {$dbtbpre}enewsinfotype where mid='3' order by myorder asc",10,24,0}]
+						<li><a href='[!--news.url--]<?=$bqr[tpath]?>'><?=$bqr[tname]?></a></li>
+						[/e:loop]
+					</ul>
+				</dd>
+			</dl>
+		</div>
+
+		<div class="commend">
+			<dl class="tbox">
+				<dt><strong>同类型产品</strong></dt>
+				<dd>
+					<ul class="e3">
+						[e:loop={"select * from phome_ecms_photo where classid='$navinfor[classid]' order by paixu asc limit 10",10,24,0}]
+						<li>
+							<a href="<?=$bqr[titleurl]?>" class="preview"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr[title]?>"/></a>
+							<a href="<?=$bqr[titleurl]?>" class="title"><?=$bqr[title]?></a>
+							<span class="intro">功率:<span class="fc-f90"><?=$bqr[gonglv]?></span>(Kw)</span>
+							<span class="intro">排气量:<span class="fc-f90"><?=$bqr[qiliang]?></span>(m3/min)</span>
+						</li>
+						[/e:loop]
+					</ul>
+				</dd>
+				<dd style="padding-left:190px; height:26px;"><a href="">更多...</a></dd>
+			</dl>
+		</div><!-- /commend -->
+	</div><!-- /pright -->
+</div>
+[!--temp.footer--]
+</body>
+</html>
